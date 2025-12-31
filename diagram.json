@@ -1,0 +1,26 @@
+
+{
+  "version": 1,
+  "author": "Kamil Synowiec",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -151.2,
+      "left": 155.4,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -46.5, "left": 351.1, "attrs": {} }
+  ],
+  "connections": [
+    [ "bz1:1", "uno:GND.1", "green", [ "v28.8", "h-76.8" ] ],
+    [ "bz1:2", "uno:7", "green", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v182.4", "h-192" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v201.6", "h-289.2" ] ],
+    [ "ultrasonic1:TRIG", "uno:1", "green", [ "v-76.8", "h-182.8" ] ],
+    [ "ultrasonic1:ECHO", "uno:3", "green", [ "v0", "h-212" ] ]
+  ],
+  "dependencies": {}
+}
