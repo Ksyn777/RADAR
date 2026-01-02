@@ -1,0 +1,9 @@
+# ninja log v6
+21	1849	7890874955940446	Radar_autogen/timestamp	e52ba9d6a6c17a00
+21	1849	7890874955940446	Radar_autogen/mocs_compilation.cpp	e52ba9d6a6c17a00
+21	1849	7890874955940446	C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Radar_autogen/timestamp	e52ba9d6a6c17a00
+21	1849	7890874955940446	C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Radar_autogen/mocs_compilation.cpp	e52ba9d6a6c17a00
+1871	8170	7890874957724514	CMakeFiles/Radar.dir/main.cpp.obj	3ef973161599f376
+1866	8200	7890874957672935	CMakeFiles/Radar.dir/Radar_autogen/mocs_compilation.cpp.obj	2e20b7963002eec
+1877	8554	7890874957774516	CMakeFiles/Radar.dir/mainwindow.cpp.obj	d9ad55d3d957c74a
+8554	9136	7890875024551193	Radar.exe	5a380aa64afcf545
