@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7649706ca14cb611b127.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Radar",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Radar::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Radar-Debug-6ac2c7d4dc48854eb8e9.json",
+					"name" : "Radar",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Radar_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Radar_autogen-Debug-f08195b875085a22c58a.json",
+					"name" : "Radar_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Radar_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Radar_autogen_timestamp_deps-Debug-502fe0de8d56d3085922.json",
+					"name" : "Radar_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -47,6 +47,7 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW
   C:/Qt/6.9.1/mingw_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiterator.h \
@@ -71,6 +72,8 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW
   C:/Qt/6.9.1/mingw_64/include/QtCore/qpair.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qproperty.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qpropertyprivate.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qscopedpointer.h \
@@ -155,6 +158,12 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/build/Desktop_Qt_6_9_1_MinGW
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/QSerialPort \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/QSerialPortInfo \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qserialport.h \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qserialportglobal.h \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qserialportinfo.h \
+  C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qtserialportexports.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \

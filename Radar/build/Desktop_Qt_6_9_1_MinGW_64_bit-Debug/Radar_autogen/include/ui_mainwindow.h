@@ -11,8 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -22,6 +24,10 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QPushButton *connectButton;
+    QPushButton *disconnectButton;
+    QPushButton *searchButton;
+    QComboBox *searchBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -32,6 +38,18 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        connectButton = new QPushButton(centralwidget);
+        connectButton->setObjectName("connectButton");
+        connectButton->setGeometry(QRect(0, 30, 101, 24));
+        disconnectButton = new QPushButton(centralwidget);
+        disconnectButton->setObjectName("disconnectButton");
+        disconnectButton->setGeometry(QRect(0, 60, 101, 24));
+        searchButton = new QPushButton(centralwidget);
+        searchButton->setObjectName("searchButton");
+        searchButton->setGeometry(QRect(0, 0, 101, 24));
+        searchBox = new QComboBox(centralwidget);
+        searchBox->setObjectName("searchBox");
+        searchBox->setGeometry(QRect(110, 0, 241, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -49,6 +67,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        connectButton->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        disconnectButton->setText(QCoreApplication::translate("MainWindow", "Disconnect", nullptr));
+        searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
     } // retranslateUi
 
 };
