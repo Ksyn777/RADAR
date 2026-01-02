@@ -46,6 +46,20 @@ void MainWindow::paintEvent(QPaintEvent *event)
     for (int r = 50; r <= maxRadius; r += 50) {
         painter.drawEllipse(center, r, r);
     }
+
+    double angleRad = qDegreesToRadians(this->currentAngle);
+
+    double scale = 1.0;
+    int targetX = center.x() + (this->currentDistance * scale * qCos(angleRad));
+    int targetY = center.y() - (this->currentDistance * scale * qSin(angleRad));
+
+
+    QPen pointPen(Qt::red, 5);
+    pointPen.setCapStyle(Qt::RoundCap);
+    painter.setPen(pointPen);
+
+    painter.drawPoint(targetX, targetY);
+
 }
 
 
@@ -102,17 +116,14 @@ void MainWindow::on_connectButton_clicked()
         this->device->setStopBits(QSerialPort::OneStop);
         this->device->setFlowControl(QSerialPort::NoFlowControl);
 
+        connect(device, &QSerialPort::readyRead, this, &MainWindow::readSerial);
+
         qDebug()<<"Otwarto port szeregowy.";
     }
     else {
         qDebug()<<"Otwarcie porty szeregowego się nie powiodło!";
     }
 
-    if(!device->isOpen()) {
-        if(device->open(QSerialPort::ReadWrite)) {
-                connect(this->device, SIGNAL(readyRead()), this, SLOT(readSerial()));
-        }
-    }
 }
 
 
@@ -127,11 +138,19 @@ void MainWindow::on_disconnectButton_clicked()
 
 void MainWindow::readSerial() {
     while(this->device->canReadLine()) {
-        QString line = this->device->readLine();
-        qDebug() << line;
-        QString terminator = "r";
-        int pos = line.lastIndexOf(terminator);
-        qDebug() << line.left(pos);
+        QString line = QString::fromLocal8Bit(this->device->readLine()).trimmed();
+        QStringList data = line.split(",");
+        if(data.size() == 2) {
+            double angle = data[0].toDouble();
+            double distance = data[1].toDouble();
+
+            qDebug() << "Kąt:" << angle << "Dystans:" << distance;
+
+            this->currentAngle = angle;
+            this->currentDistance = distance;
+
+            update();
+        }
     }
 }
 

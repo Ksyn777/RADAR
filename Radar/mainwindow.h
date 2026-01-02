@@ -25,6 +25,8 @@ private:
     Ui::MainWindow *ui;
     void readSerial();
     QSerialPort *device;
+    double currentAngle;
+    double currentDistance;
 protected:
     void paintEvent(QPaintEvent *event) override;
 private slots:
