@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -28,6 +30,8 @@ public:
     QPushButton *disconnectButton;
     QPushButton *searchButton;
     QComboBox *searchBox;
+    QLCDNumber *lcdDistance;
+    QLabel *labelCheck;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,6 +54,13 @@ public:
         searchBox = new QComboBox(centralwidget);
         searchBox->setObjectName("searchBox");
         searchBox->setGeometry(QRect(110, 0, 241, 24));
+        lcdDistance = new QLCDNumber(centralwidget);
+        lcdDistance->setObjectName("lcdDistance");
+        lcdDistance->setGeometry(QRect(0, 90, 101, 23));
+        labelCheck = new QLabel(centralwidget);
+        labelCheck->setObjectName("labelCheck");
+        labelCheck->setGeometry(QRect(110, 30, 31, 21));
+        labelCheck->setFrameShape(QFrame::Shape::Box);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -70,6 +81,7 @@ public:
         connectButton->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
         disconnectButton->setText(QCoreApplication::translate("MainWindow", "Disconnect", nullptr));
         searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        labelCheck->setText(QString());
     } // retranslateUi
 
 };

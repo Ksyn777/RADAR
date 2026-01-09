@@ -123,6 +123,7 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/mainwindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qtversionchecks.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qtypes.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h
@@ -146,12 +147,14 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/mainwindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpainter.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpalette.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h
@@ -165,7 +168,12 @@ C:/Users/Lenovo-X260/Desktop/ZadaniaGit/Radar/Radar/mainwindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qserialportglobal.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qserialportinfo.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtSerialPort/qtserialportexports.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLCDNumber
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlcdnumber.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h

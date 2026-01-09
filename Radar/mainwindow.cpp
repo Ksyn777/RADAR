@@ -4,6 +4,10 @@
 #include <QtMath>
 #include <QSerialPort>
 #include <QSerialPortInfo>
+#include <QLCDNumber>
+#include <QTimer>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +15,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->device = new QSerialPort(this);
+    ui->lcdDistance->setDigitCount(5);
+    ui->lcdDistance->display(currentDistance);
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, [this](){
+        kat += 5.0; // Prędkość obrotu radaru
+        if (kat >= 360) kat = 0;
+        update();
+    });
+    timer->start(30);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -22,47 +37,51 @@ void MainWindow::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
+    painter.fillRect(rect(), Qt::black);
 
-    QPoint center(width() / 2, height() / 2);
-    int maxRadius = 250; // Maksymalny zasięg sonaru
+    painter.translate(width() / 2, height() / 2);
 
-    // Ustawienie koloru linii
-    QPen gridPen(Qt::darkGreen, 1, Qt::DashLine); // Linia przerywana
-    painter.setPen(gridPen);
+    int maxRadius = 250;
 
-    // Rysowanie linii pod kątami
+     //Rysowanie siatki
+    painter.setPen(QPen(Qt::darkGreen, 1, Qt::DashLine));
     for (int angle = 0; angle < 360; angle += 30) {
         double angleRad = qDegreesToRadians((double)angle);
-
-
-        int x2 = center.x() + maxRadius * qCos(angleRad);
-        int y2 = center.y() - maxRadius * qSin(angleRad);
-
-        painter.drawLine(center, QPoint(x2, y2));
+        int x2 = maxRadius * qCos(angleRad);
+        int y2 = -maxRadius * qSin(angleRad);
+        painter.drawLine(0, 0, x2, y2);
     }
 
     // Rysowanie okręgów
     painter.setPen(QPen(Qt::green, 1, Qt::SolidLine));
     for (int r = 50; r <= maxRadius; r += 50) {
-        painter.drawEllipse(center, r, r);
+        painter.drawEllipse(QPoint(0,0), r, r);
     }
 
-    double angleRad = qDegreesToRadians(this->currentAngle);
+    //  WYWOŁANIE LINII
+    paintLine(&painter);
 
-    double scale = 1.0;
-    int targetX = center.x() + (this->currentDistance * scale * qCos(angleRad));
-    int targetY = center.y() - (this->currentDistance * scale * qSin(angleRad));
+    //Rysowanie punktu celu (obiektu na radarze)
+    double angleRadTarget = qDegreesToRadians(this->currentAngle);
+    int targetX = this->currentDistance * qCos(angleRadTarget);
+    int targetY = -this->currentDistance * qSin(angleRadTarget);
 
-
-    QPen pointPen(Qt::red, 5);
-    pointPen.setCapStyle(Qt::RoundCap);
-    painter.setPen(pointPen);
-
+    painter.setPen(QPen(Qt::red, 8, Qt::SolidLine, Qt::RoundCap));
     painter.drawPoint(targetX, targetY);
-
 }
 
+void MainWindow::paintLine(QPainter *painter)
+{
+    painter->save();
 
+    painter->setPen(QPen(Qt::green, 2));
+
+    painter->rotate(kat);
+
+    painter->drawLine(0, 0, 250, 0);
+
+    painter->restore();
+}
 
 void MainWindow::on_searchButton_clicked()
 {
@@ -119,6 +138,8 @@ void MainWindow::on_connectButton_clicked()
         connect(device, &QSerialPort::readyRead, this, &MainWindow::readSerial);
 
         qDebug()<<"Otwarto port szeregowy.";
+        labelCheck->setText("ON");
+
     }
     else {
         qDebug()<<"Otwarcie porty szeregowego się nie powiodło!";
@@ -132,6 +153,7 @@ void MainWindow::on_disconnectButton_clicked()
     if(this->device->isOpen()) {
         this->device->close();
         qDebug() << "Zamknięto port.";
+        labelCheck->setText("OFF");
         return;
     }
 }
